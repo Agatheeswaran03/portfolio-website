@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Agatheeswaran.R</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            line-height: 1.5;
+        }
+
+        .page {
+            max-width: 21cm;
+            min-height: 29.7cm;
+            margin: 2rem auto;
+            background: white;
+            padding: 4rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+                padding: 2rem;
+                width: 100%;
+                max-width: none;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        header {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.25rem;
+            color: #111827;
+            letter-spacing: -0.025em;
+        }
+
+        .subtitle {
+            color: #d97706;
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-top: 0.25rem;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 0.875rem;
+            color: #4b5563;
+        }
+
+        .contact-info div {
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-info a {
+            color: #4b5563;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+            color: #d97706;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #d97706;
+            margin: 0 0 1rem 0;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #e5e7eb;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.25rem;
+        }
+
+        .job-title {
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .company {
+            font-weight: 600;
+            color: #4b5563;
+        }
+
+        .date {
+            font-size: 0.875rem;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        ul {
+            margin: 0.5rem 0 1.5rem 1.2rem;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 0.25rem;
+            color: #374151;
+            font-size: 0.925rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+
+        .skill-category {
+            display: flex;
+            align-items: baseline;
+        }
+
+        .skill-label {
+            font-weight: 700;
+            width: 120px;
+            flex-shrink: 0;
+            color: #111827;
+            font-size: 0.9rem;
+        }
+
+        .skill-list {
+            flex: 1;
+            color: #374151;
+            font-size: 0.9rem;
+        }
+
+        .project-item {
+            margin-bottom: 1rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .tech-stack {
+            font-size: 0.75rem;
+            color: #d97706;
+            font-weight: 600;
+            background: #fffbeb;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .download-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #1f2937;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            background: #d97706;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+
+        .btn:hover {
+            background: #b45309;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="download-bar no-print">
+        <span>This is a preview of your resume.</span>
+        <button class="btn" onclick="window.print()">Save as PDF</button>
+    </div>
+
+    <div class="page">
+        <header>
+            <div>
+                <h1>Agatheeswaran.R</h1>
+                <div class="subtitle">Full Stack & AI Developer</div>
+            </div>
+            <div class="contact-info">
+                <div>Sivaganga, Tamil Nadu</div>
+                <div><a href="mailto:agatheeswaran03@gmail.com">agatheeswaran03@gmail.com</a></div>
+                <div><a href="tel:6374603913">+91 6374603913</a></div>
+                <div><a href="https://linkedin.com/in/agathees-waran-3ab36333a">linkedin.com/in/agathees-waran</a></div>
+                <div><a href="https://github.com/Agatheeswaran03">github.com/Agatheeswaran03</a></div>
+            </div>
+        </header>
+
+        <section>
+            <h2>Education</h2>
+            <div class="job-header">
+                <span class="job-title">B.Tech in Information Technology</span>
+                <span class="date">2023 - 2027</span>
+            </div>
+            <div class="company">M.A.M College of Engineering and Technology</div>
+            <ul style="margin-top: 0.25rem;">
+                <li>Passed with Honors</li>
+                <li>CGPA: 8.0</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <span class="skill-label">Frontend</span>
+                    <span class="skill-list">React.js, Tailwind CSS, HTML5, CSS3, JavaScript (ES6+), Framer
+                        Motion</span>
+                </div>
+                <div class="skill-category">
+                    <span class="skill-label">Backend</span>
+                    <span class="skill-list">Node.js, Express.js, RESTful APIs, Python</span>
+                </div>
+                <div class="skill-category">
+                    <span class="skill-label">Database</span>
+                    <span class="skill-list">MongoDB, Mongoose ODM</span>
+                </div>
+                <div class="skill-category">
+                    <span class="skill-label">Tools & AI</span>
+                    <span class="skill-list">Git, GitHub, VS Code, OpenAI API Integration, Postman</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Professional Experience</h2>
+
+            <div class="project-item">
+                <div class="job-header">
+                    <span class="job-title">Full Stack Web Development Intern</span>
+                    <span class="date">July 2025 - Present</span>
+                </div>
+                <div class="company">Pantech Solutions</div>
+                <ul>
+                    <li>Spearheading the development of scalable web applications using the MERN stack.</li>
+                    <li>Collaborating with cross-functional teams to integrate AI features into traditional web
+                        architectures.</li>
+                    <li>Implementing responsive user interfaces with React and Tailwind CSS.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="job-header">
+                    <span class="job-title">Full Stack Web Development Intern</span>
+                    <span class="date">Sep 2025 - Dec 2025</span>
+                </div>
+                <div class="company">EDU TANTR</div>
+                <ul>
+                    <li>Successfully completed an intensive internship program focusing on Full Stack Web Development.
+                    </li>
+                    <li>Gained practical exposure to professional software development workflows.</li>
+                    <li>Built functional prototype applications demonstrating core web concepts.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Key Projects</h2>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="job-title">AI-Powered Task Manager</span>
+                    <span class="tech-stack">Python, OpenAI, React</span>
+                </div>
+                <ul>
+                    <li>Developed a smart application that uses OpenAI to prioritize daily tasks based on urgency and
+                        complexity.</li>
+                    <li>Integrated natural language processing to understand user task descriptions.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="job-title">Premium Portfolio Website</span>
+                    <span class="tech-stack">React, Tailwind, Framer Motion</span>
+                </div>
+                <ul>
+                    <li>Designed and built a high-performance personal portfolio with glassmorphism aesthetics.</li>
+                    <li>Implemented advanced animations and a responsive layout for optimal user experience.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="job-title">Data Analysis Dashboard</span>
+                    <span class="tech-stack">MongoDB, Express, React, Node.js</span>
+                </div>
+                <ul>
+                    <li>Created an interactive dashboard for visualizing large datasets using D3.js and MERN stack.</li>
+                    <li>Enabled real-time data filtering and reporting capabilities.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Certifications</h2>
+            <ul>
+                <li><strong>Certified in Python & ChatGPT</strong> - GUVI</li>
+                <li><strong>Full Stack Web Development</strong> - Pantech Solutions</li>
+                <li><strong>Artificial Intelligence Symposium</strong> - M.A.M College</li>
+                <li><strong>React JS Course</strong> - LetsUpgrade</li>
+            </ul>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
