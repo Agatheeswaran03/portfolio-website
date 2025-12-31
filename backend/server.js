@@ -7,8 +7,25 @@ const app = express();
 
 // 1. Middleware
 // CORS Configuration - Allow frontend to access backend
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  'https://agatheeswaran-portfolio.vercel.app',
+  'http://localhost:5173',
+  'http://localhost:5174'
+];
+
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1 || !process.env.NODE_ENV) {
+      callback(null, true);
+    } else {
+      console.log("Blocked by CORS:", origin);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
   optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
