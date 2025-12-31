@@ -4,6 +4,7 @@ const cors = require('cors');
 require('dotenv').config(); // Load environment variables
 
 const app = express();
+const auth = require('./middleware/auth');
 
 // 1. Middleware
 // CORS Configuration - Allow frontend to access backend
@@ -139,7 +140,7 @@ app.post('/send-message', async (req, res) => {
 });
 
 // GET: Fetch all messages (for admin/dashboard use)
-app.get('/messages', async (req, res) => {
+app.get('/messages', auth, async (req, res) => {
   try {
     const messages = await Message.find().sort({ date: -1 }); // Sort by newest first
     res.json({
@@ -152,6 +153,30 @@ app.get('/messages', async (req, res) => {
     res.status(500).json({
       success: false,
       error: 'Failed to fetch messages'
+    });
+  }
+});
+
+// DELETE: Remove a message by ID
+app.delete('/messages/:id', auth, async (req, res) => {
+  try {
+    const message = await Message.findByIdAndDelete(req.params.id);
+    if (!message) {
+      return res.status(404).json({
+        success: false,
+        error: 'Message not found'
+      });
+    }
+    console.log(`🗑️ Message deleted: ${message.name}`);
+    res.json({
+      success: true,
+      message: 'Message deleted successfully'
+    });
+  } catch (error) {
+    console.error('❌ Error deleting message:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to delete message'
     });
   }
 });

@@ -6,6 +6,7 @@ import ProjectForm from '../components/admin/ProjectForm';
 import CertificateForm from '../components/admin/CertificateForm';
 import ExperienceForm from '../components/admin/ExperienceForm';
 import ResumeManager from '../components/admin/ResumeManager';
+import MessageList from '../components/admin/MessageList';
 import { API_URL } from '../config';
 
 const AdminDashboard = () => {
@@ -22,7 +23,7 @@ const AdminDashboard = () => {
         if (!token) {
             navigate('/admin/login');
         } else {
-            if (activeTab !== 'resume') {
+            if (activeTab !== 'resume' && activeTab !== 'messages') {
                 fetchData(activeTab);
             }
         }
@@ -83,7 +84,7 @@ const AdminDashboard = () => {
 
             <div className="max-w-7xl mx-auto p-6">
                 <div className="flex gap-4 mb-8 overflow-x-auto pb-2">
-                    {['projects', 'certificates', 'experience', 'resume'].map((tab) => (
+                    {['projects', 'certificates', 'experience', 'resume', 'messages'].map((tab) => (
                         <button
                             key={tab}
                             onClick={() => setActiveTab(tab)}
@@ -99,6 +100,8 @@ const AdminDashboard = () => {
 
                 {activeTab === 'resume' ? (
                     <ResumeManager />
+                ) : activeTab === 'messages' ? (
+                    <MessageList />
                 ) : (
                     <div className="grid gap-6">
                         <div className="flex justify-between items-center">
