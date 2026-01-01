@@ -47,10 +47,10 @@ const Hero = () => {
                             <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">Connect</span>
                             <div className="h-px w-12 bg-slate-200 dark:bg-slate-700"></div>
                             <div className="flex gap-4">
-                                <a href="https://github.com/Agatheeswaran-P" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-slate-800 rounded-full hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-100 dark:border-slate-700 shadow-sm transition-transform hover:-translate-y-1">
+                                <a href="https://github.com/Agatheeswaran03" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-slate-800 rounded-full hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-100 dark:border-slate-700 shadow-sm transition-transform hover:-translate-y-1">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" className="w-6 h-6 opacity-80" />
                                 </a>
-                                <a href="https://www.linkedin.com/in/agatheeswaran-p-5582b1259/" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-slate-800 rounded-full hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-100 dark:border-slate-700 shadow-sm transition-transform hover:-translate-y-1">
+                                <a href="https://www.linkedin.com/in/agatheeswaran03" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-slate-800 rounded-full hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-100 dark:border-slate-700 shadow-sm transition-transform hover:-translate-y-1">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" className="w-6 h-6" />
                                 </a>
                                 <a href="https://www.instagram.com/agathees__/" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-slate-800 rounded-full hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-100 dark:border-slate-700 shadow-sm transition-transform hover:-translate-y-1">
